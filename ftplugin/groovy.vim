@@ -84,13 +84,13 @@ if !exists("<SID>RunPrompt()")
       if has("win32") || has("win64")
         execute '!"' . s:GROOVY_PATH . '" ' . expand('%') . ' ' . b:args
       else
-        execute "!" . s:GROOVY_PATH . " " . expand("%") . " " . b:args
+        execute "term" . s:GROOVY_PATH . " " . expand("%") . " " . b:args
       endif
     else
       if has("win32") || has("win64")
         execute '!"' . s:GROOVY_PATH . '" -cp ' . b:classpath . ' ' . expand('%') . ' ' . b:args
       else
-        execute "!" . s:GROOVY_PATH . " -cp " . b:classpath . " " . expand("%") . " " . b:args
+        execute "term" . s:GROOVY_PATH . " -cp " . b:classpath . " " . expand("%") . " " . b:args
       endif
     endif
     silent cd -
@@ -114,13 +114,13 @@ if !exists("<SID>CompilePrompt()")
       if has("win32") || has("win64")
         execute '!"' . s:GROOVYC_PATH . '" ' . expand('%')
       else
-        execute "!" . s:GROOVYC_PATH . " " . expand("%")
+        execute "term" . s:GROOVYC_PATH . " " . expand("%")
       endif
     else
       if has("win32") || has("win64")
         execute '!"' . s:GROOVYC_PATH . '" -cp ' . b:classpath . ' ' . expand('%')
       else
-        execute "!" . s:GROOVYC_PATH . " -cp " . b:classpath . " " . expand("%")
+        execute "term" . s:GROOVYC_PATH . " -cp " . b:classpath . " " . expand("%")
       endif
     endif
     silent cd -
@@ -136,13 +136,13 @@ if !exists("<SID>RunNoPrompt()")
       if has("win32") || has("win64")
         execute '!"' . s:GROOVY_PATH . '" ' . expand("%") . ' ' . b:args
       else
-        execute "!" . s:GROOVY_PATH . " " . expand("%") . " " . b:args
+        execute "term" . s:GROOVY_PATH . " " . expand("%") . " " . b:args
       endif
     else
       if has("win32") || has("win64")
         execute '!"' . s:GROOVY_PATH . '" -cp ' . b:classpath . ' ' . expand('%') . ' ' . b:args
       else
-        execute "!" . s:GROOVY_PATH . " -cp " . b:classpath . " " . expand("%") . " " . b:args
+        execute "term" . s:GROOVY_PATH . " -cp " . b:classpath . " " . expand("%") . " " . b:args
       endif
     endif
     silent cd -
@@ -158,13 +158,13 @@ if !exists("<SID>CompileNoPrompt()")
       if has("win32") || has("win64")
         execute '!"' . s:GROOVYC_PATH . '" ' . expand('%')
       else
-        execute "!" . s:GROOVYC_PATH . " " . expand("%")
+        execute "term" . s:GROOVYC_PATH . " " . expand("%")
       endif
     else
       if has("win32") || has("win64")
         execute '!"' . s:GROOVYC_PATH . '" -cp ' . b:classpath . ' ' . expand('%')
       else
-        execute "!" . s:GROOVYC_PATH . " -cp " . b:classpath . " " . expand("%")
+        execute "term" . s:GROOVYC_PATH . " -cp " . b:classpath . " " . expand("%")
       endif
     endif
     silent cd -
