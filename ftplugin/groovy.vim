@@ -206,21 +206,23 @@ endif
 au VimEnter *.groovy echo "F2 for Groovy plugin help"
 
 " Abbreviations
-ia <buffer> cl class {<CR>}<Esc>kf{i<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> dcp this.class.classLoader.rootLoader.addURL(new URL('file:///'))<Esc>F'i<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> fl for( in ){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> fli for(int i = 0; i < ; i++){<CR>}<Esc>kf;f;i<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> ifes if(){<CR>}else{<CR>}<Esc>kkf(a<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> ifs if(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> mm static main(args){<CR>}<Esc>kA<CR><Tab><C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> pl println <C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> plg println "${}"<Left><Left><C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> pls println ''<Left><C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> sf static final <C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> sw switch(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> tc try{<CR>}catch(){<CR>}<Esc>kkA<CR><C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> tcf try{<CR>}catch(){<CR>}finally{<CR>}<Esc>kkkA<CR><C-R>=<SID>RemoveSpace()<CR>
-ia <buffer> wl while(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
+if exists("g:groovy#enable#abbreviations") && g:groovy#enable#abbreviations == 1
+  ia <buffer> cl class {<CR>}<Esc>kf{i<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> dcp this.class.classLoader.rootLoader.addURL(new URL('file:///'))<Esc>F'i<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> fl for( in ){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> fli for(int i = 0; i < ; i++){<CR>}<Esc>kf;f;i<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> ifes if(){<CR>}else{<CR>}<Esc>kkf(a<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> ifs if(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> mm static main(args){<CR>}<Esc>kA<CR><Tab><C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> pl println <C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> plg println "${}"<Left><Left><C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> pls println ''<Left><C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> sf static final <C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> sw switch(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> tc try{<CR>}catch(){<CR>}<Esc>kkA<CR><C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> tcf try{<CR>}catch(){<CR>}finally{<CR>}<Esc>kkkA<CR><C-R>=<SID>RemoveSpace()<CR>
+  ia <buffer> wl while(){<CR>}<Esc>kf(a<C-R>=<SID>RemoveSpace()<CR>
+endif
 
 " Change the :browse e filter to primarily show Groovy-related files.
 if has("gui_win32") && !exists("b:browsefilter")
